@@ -11,7 +11,6 @@ namespace QMSales.iOS
 		public static ParseStorage Default { get { return contactServiceInstance; } }
 		public List<QMSalesContact> Contacts { get; private set;}
 
-		// Constructor
 		public ParseStorage ()
 		{
 			Contacts = new List<QMSalesContact>();
