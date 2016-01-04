@@ -11,8 +11,8 @@ namespace QMSales
 		public ParseSignup ()
 		{
 			InitializeComponent ();
-		}
 
+		}
 
 
 		public async void SignUp_Click(object sender, EventArgs e)   

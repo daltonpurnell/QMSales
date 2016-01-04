@@ -20,6 +20,7 @@ namespace QMSales
 				
 			NavigationPage.SetHasNavigationBar (MainPage, true);
 
+
 		}
 
 		protected override void OnStart ()

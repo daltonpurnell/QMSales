@@ -24,6 +24,16 @@ namespace QMSales.iOS
 			global::Xamarin.Forms.Forms.Init ();
 
 
+
+//			ParseObject contactt = new ParseObject("Contactt");
+//			contactt["First Name"] = "Dalton";
+//			contactt["Last Name"] = "Sean Plott";
+//			contactt["Email"] = "daltonpurnell@live.com";
+//			contactt["Address"] = "420E 700N #3";
+//			contactt.SaveAsync ();
+
+
+
 			// Create a new Dropbox Session, choose the type of access that your app has to your folders.
 			//Session.RootAppFolder = The app will only have access to its own folder located in /Applications/AppName/
 			// Session.RootDropbox = The app will have access to all the files that you have granted permission

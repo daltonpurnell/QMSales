@@ -1,13 +1,13 @@
 ﻿<Properties StartupItem="iOS/QMSales.iOS.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6s.9.2" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/MainActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="QMSales/QMSalesContact.cs">
     <Files>
-      <File FileName="QMSales/ParseLogin.xaml.cs" Line="1" Column="1" />
-      <File FileName="QMSales/ParseSignup.xaml.cs" Line="1" Column="1" />
-      <File FileName="QMSales/IParseStorage.cs" Line="1" Column="1" />
-      <File FileName="iOS/ParseStorage.cs" Line="1" Column="1" />
-      <File FileName="Droid/AddressBookInformation.cs" Line="1" Column="1" />
-      <File FileName="Droid/MainActivity.cs" Line="25" Column="33" />
+      <File FileName="QMSales/IParseStorage.cs" Line="16" Column="47" />
+      <File FileName="Droid/ParseStorage.cs" Line="42" Column="59" />
+      <File FileName="iOS/AppDelegate.cs" Line="34" Column="4" />
+      <File FileName="QMSales/QMSalesContact.cs" Line="27" Column="44" />
+      <File FileName="iOS/ParseStorage.cs" Line="46" Column="51" />
+      <File FileName="iOS/AddressBookInformation_iOS.cs" Line="59" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
