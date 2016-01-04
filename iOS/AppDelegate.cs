@@ -25,12 +25,12 @@ namespace QMSales.iOS
 
 
 
-//			ParseObject contactt = new ParseObject("Contactt");
-//			contactt["First Name"] = "Dalton";
-//			contactt["Last Name"] = "Sean Plott";
-//			contactt["Email"] = "daltonpurnell@live.com";
-//			contactt["Address"] = "420E 700N #3";
-//			contactt.SaveAsync ();
+			ParseObject thing = new ParseObject("Thing");
+			thing["First Name"] = "Dalton";
+			thing["Last Name"] = "Purnell";
+			thing["Email"] = "daltonpurnell@live.com";
+			thing["Address"] = "420E 700N #3";
+			thing.SaveAsync ();
 
 
 
