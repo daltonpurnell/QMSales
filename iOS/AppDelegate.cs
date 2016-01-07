@@ -24,12 +24,13 @@ namespace QMSales.iOS
 			global::Xamarin.Forms.Forms.Init ();
 
 
+// 			this parse object will only save if i comment out these properties
 
 			ParseObject thing = new ParseObject("Thing");
-			thing["First Name"] = "Dalton";
-			thing["Last Name"] = "Purnell";
-			thing["Email"] = "daltonpurnell@live.com";
-			thing["Address"] = "420E 700N #3";
+//			thing["First Name"] = "Dalton";
+//			thing["Last Name"] = "Purnell";
+//			thing["Email"] = "daltonpurnell@live.com";
+//			thing["Address"] = "420E 700N #3";
 			thing.SaveAsync ();
 
 

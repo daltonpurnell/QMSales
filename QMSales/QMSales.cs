@@ -15,7 +15,7 @@ namespace QMSales
 //			}
 //			else
 //			{
-			MainPage = new NavigationPage(new FirstPage());
+			MainPage = new NavigationPage(new ParseLogin());
 //			}
 				
 			NavigationPage.SetHasNavigationBar (MainPage, true);
