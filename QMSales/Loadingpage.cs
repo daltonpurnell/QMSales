@@ -8,7 +8,7 @@ namespace QMSales
 	{
 		public Loadingpage ()
 		{
-
+			this.BackgroundColor = Color.FromRgb (136, 195, 55);
 
 			Content = new StackLayout { 
 				Children = {
@@ -23,19 +23,13 @@ namespace QMSales
 		{
 			base.OnAppearing ();
 
-			this.BackgroundColor = Color.FromRgb (136, 195, 55);
-
 
 			if (DependencyService.Get<IParseStorage>().IsUserLoggedIn())
 			{
-
-
 				Navigation.PushModalAsync(new FirstPage());
-
 			}
 			else
 			{
-
 				Navigation.PushModalAsync (new ParseLogin ());
 			}
 

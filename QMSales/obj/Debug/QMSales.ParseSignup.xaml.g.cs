@@ -17,13 +17,25 @@ namespace QMSales {
     public partial class ParseSignup : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label usernameLabel;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Entry usernameEntry;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label passwordLabel;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Entry passwordEntry;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Label emailLabel;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Entry emailEntry;
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.Button SignUpButton;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private global::Xamarin.Forms.Label messageLabel;
@@ -31,9 +43,13 @@ namespace QMSales {
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(ParseSignup));
+            usernameLabel = this.FindByName <global::Xamarin.Forms.Label>("usernameLabel");
             usernameEntry = this.FindByName <global::Xamarin.Forms.Entry>("usernameEntry");
+            passwordLabel = this.FindByName <global::Xamarin.Forms.Label>("passwordLabel");
             passwordEntry = this.FindByName <global::Xamarin.Forms.Entry>("passwordEntry");
+            emailLabel = this.FindByName <global::Xamarin.Forms.Label>("emailLabel");
             emailEntry = this.FindByName <global::Xamarin.Forms.Entry>("emailEntry");
+            SignUpButton = this.FindByName <global::Xamarin.Forms.Button>("SignUpButton");
             messageLabel = this.FindByName <global::Xamarin.Forms.Label>("messageLabel");
         }
     }

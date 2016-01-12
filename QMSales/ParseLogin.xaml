@@ -2,12 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="QMSales.ParseLogin">
 	<ContentPage.Content>
 		<StackLayout VerticalOptions="StartAndExpand">
-			<Label Text="Username" />
+			<Label Text="Username" x:Name="usernameLabel" />
 			<Entry x:Name="usernameEntry" Placeholder="" />
-			<Label Text="Password" />
+			<Label Text="Password" x:Name="passwordLabel" />
 			<Entry x:Name="passwordEntry" IsPassword="true" />
-			<Button Text="Login" Clicked="Login_Click" />
-			<Button Text="Sign Up" Clicked="SignUp_Click" />
+			<Button Text="Login" Clicked="Login_Click" x:Name="LoginButton" />
+			<Button Text="Sign Up" Clicked="SignUp_Click" x:Name="SignUpButton" />
 			<Label x:Name="messageLabel" />
 		</StackLayout>
 	</ContentPage.Content>

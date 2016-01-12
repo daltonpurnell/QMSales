@@ -12,7 +12,13 @@ namespace QMSales
 		public ParseLogin ()
 		{
 			InitializeComponent ();
-
+			this.BackgroundColor = Color.FromRgb (136, 195, 55);
+			SignUpButton.TextColor = Color.White;
+			LoginButton.TextColor = Color.White;
+			usernameLabel.TextColor = Color.White;
+			passwordLabel.TextColor = Color.White;
+			passwordEntry.BackgroundColor = Color.FromRgb (136, 195, 55);
+			usernameEntry.BackgroundColor = Color.FromRgb (136, 195, 55);
 
 		}
 
@@ -44,6 +50,17 @@ namespace QMSales
 			Navigation.PushModalAsync(new ParseSignup());
 
 		} 
+
+
+
+
+		protected override void OnAppearing ()
+		{
+			base.OnAppearing ();
+
+
+
+		}
 
 
 	}
