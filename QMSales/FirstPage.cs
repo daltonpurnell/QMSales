@@ -58,7 +58,7 @@ namespace QMSales
 					ItemTemplate = new DataTemplate(() =>
 						{
 							// Create views with bindings for displaying each property.
-							Label label = new Label();
+							Label label = new Label() { TextColor = Color.FromRgb (100, 100, 100)};
 							label.SetBinding(Label.TextProperty, "Title");
 
 							// Return an assembled ViewCell.
@@ -68,7 +68,7 @@ namespace QMSales
 
 								View = new StackLayout
 								{
-									Padding = new Thickness(10, 5),
+									Padding = new Thickness(15, 10),
 									Orientation = StackOrientation.Horizontal,
 									Children = 
 									{
@@ -83,9 +83,34 @@ namespace QMSales
 				Content = SalesToolsListView;
 				SalesToolsListView.ItemSelected += OnItemSelected;
 
+
+				// create logout toolbar item
+				var tbi2 = new ToolbarItem ("Log Out", null, () => {
+
+				}, 0, 0);
+
+
+				if (Device.OS == TargetPlatform.Android) { // BUG: Android doesn't support the icon being null
+					tbi2 = new ToolbarItem ("Log Out", "Log Out", () => {
+
+					}, 0, 0);
+				}
+
+				ToolbarItems.Add(tbi2);
+				tbi2.Clicked+= HandleLogOutEvent;
+
+
 			}
 
-		
+
+			public void HandleLogOutEvent (object sender, EventArgs ea) {
+
+				DependencyService.Get<IParseStorage> ().LogoutAsync ();
+				Navigation.PushModalAsync (new ParseLogin ());
+
+			}
+
+
 
 			public void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 			{
@@ -170,7 +195,7 @@ namespace QMSales
 					ItemTemplate = new DataTemplate(() =>
 						{
 							// Create views with bindings for displaying each property.
-							Label label = new Label();
+							Label label = new Label() { TextColor = Color.FromRgb (100, 100, 100)};
 							label.SetBinding(Label.TextProperty, "Name");
 
 							// Return an assembled ViewCell.
@@ -178,7 +203,7 @@ namespace QMSales
 							{
 								View = new StackLayout
 								{
-									Padding = new Thickness(10, 5),
+									Padding = new Thickness(15, 10),
 									Orientation = StackOrientation.Horizontal,
 									Children = 
 									{
@@ -192,6 +217,32 @@ namespace QMSales
 
 				Content = HandyRefListView;
 				HandyRefListView.ItemSelected += OnItemSelected;
+
+				// create logout toolbar item
+				var tbi2 = new ToolbarItem ("Log Out", null, () => {
+
+				}, 0, 0);
+
+
+				if (Device.OS == TargetPlatform.Android) { // BUG: Android doesn't support the icon being null
+					tbi2 = new ToolbarItem ("Log Out", "Log Out", () => {
+
+					}, 0, 0);
+				}
+
+				ToolbarItems.Add(tbi2);
+				tbi2.Clicked+= HandleLogOutEvent;
+
+
+
+			}
+
+
+
+			public void HandleLogOutEvent (object sender, EventArgs ea) {
+
+				DependencyService.Get<IParseStorage> ().LogoutAsync ();
+				Navigation.PushModalAsync (new ParseLogin ());
 
 			}
 
@@ -314,7 +365,7 @@ namespace QMSales
 								
 								View = new StackLayout
 								{
-									Padding = new Thickness(10, 5),
+									Padding = new Thickness(15, 10),
 									Orientation = StackOrientation.Horizontal,
 									Children = 
 									{
@@ -333,6 +384,8 @@ namespace QMSales
 
 				Content = ContactsListView;
 
+
+				// create plus toolbar item
 				var tbi = new ToolbarItem ("+", null, () => {
 
 				}, 0, 0);
@@ -347,6 +400,25 @@ namespace QMSales
 
 				ToolbarItems.Add (tbi);
 				tbi.Clicked+= HandleEvent;
+
+
+
+				// create logout toolbar item
+				var tbi2 = new ToolbarItem ("Log Out", null, () => {
+
+				}, 0, 0);
+
+
+				if (Device.OS == TargetPlatform.Android) { // BUG: Android doesn't support the icon being null
+					tbi2 = new ToolbarItem ("Log Out", "Log Out", () => {
+
+					}, 0, 0);
+				}
+
+				ToolbarItems.Add(tbi2);
+				tbi2.Clicked+= HandleLogOutEvent;
+
+
 			}
 
 			public void HandleEvent (object sender, EventArgs ea) {
@@ -358,8 +430,15 @@ namespace QMSales
 				DependencyService.Get<IAddressBookInformation> ().DisplayContactScreen ();
 
 			}
-				
 
+
+			public void HandleLogOutEvent (object sender, EventArgs ea) {
+
+				DependencyService.Get<IParseStorage> ().LogoutAsync ();
+				Navigation.PushModalAsync (new ParseLogin ());
+
+			}
+				
 		}
 
 

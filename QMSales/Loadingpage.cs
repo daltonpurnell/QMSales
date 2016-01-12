@@ -12,7 +12,7 @@ namespace QMSales
 
 			Content = new StackLayout { 
 				Children = {
-					new Label { Text = "Loading..." }
+					new Label { Text = "Loading...", TextColor = Color.FromRgb (136, 195, 55)}
 
 				}
 			};
