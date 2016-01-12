@@ -30,7 +30,7 @@ namespace QMSales
 			var result = await DependencyService.Get<IParseStorage>().SignUpUserAsync(user);
 
 			if (result) {
-				await Navigation.PushAsync (new FirstPage ());
+				await Navigation.PushModalAsync (new FirstPage ());
 			} else {
 
 				messageLabel.Text = "Sign up failed";
