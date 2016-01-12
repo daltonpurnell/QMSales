@@ -9,16 +9,7 @@ namespace QMSales
 		public App ()
 		{
 
-//			if (userManager.IsUserLoggedIn())
-//			{
-//				MainPage = new FirstPage ();
-//			}
-//			else
-//			{
-			MainPage = new NavigationPage(new ParseLogin());
-//			}
-				
-//			NavigationPage.SetHasNavigationBar (MainPage, true);
+			MainPage = new NavigationPage(new Loadingpage());
 
 
 		}

@@ -357,8 +357,6 @@ namespace QMSales
 				DependencyService.Get<IAddressBookInformation>().GetContacts();
 				DependencyService.Get<IAddressBookInformation> ().DisplayContactScreen ();
 
-
-
 			}
 				
 
@@ -369,9 +367,9 @@ namespace QMSales
 		public FirstPage ()
 		{
 
-			this.Children.Add (new NavigationPage(new HandyRefPage ()) { Title = "Handy Ref", BarBackgroundColor = Color.White });
-			this.Children.Add (new NavigationPage(new SalesToolsPage ()) { Title = "Sales Tools", BarBackgroundColor = Color.White});
-			this.Children.Add (new NavigationPage(new ContactsPage ()) { Title = "Contacts", BarBackgroundColor = Color.White});
+			this.Children.Add (new NavigationPage(new HandyRefPage ()) { Title = "Handy Ref", BarBackgroundColor = Color.FromRgb (136, 195, 55), BarTextColor = Color.White });
+			this.Children.Add (new NavigationPage(new SalesToolsPage ()) { Title = "Sales Tools", BarBackgroundColor = Color.FromRgb (136, 195, 55), BarTextColor = Color.White});
+			this.Children.Add (new NavigationPage(new ContactsPage ()) { Title = "Contacts", BarBackgroundColor = Color.FromRgb (136, 195, 55), BarTextColor = Color.White});
 
 		}
 			

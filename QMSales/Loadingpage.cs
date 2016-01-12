@@ -8,12 +8,40 @@ namespace QMSales
 	{
 		public Loadingpage ()
 		{
+
+
 			Content = new StackLayout { 
 				Children = {
-					new Label { Text = "Hello ContentPage" }
+					new Label { Text = "Loading..." }
+
 				}
 			};
 		}
+
+
+		protected override void OnAppearing ()
+		{
+			base.OnAppearing ();
+
+			this.BackgroundColor = Color.FromRgb (136, 195, 55);
+
+
+			if (DependencyService.Get<IParseStorage>().IsUserLoggedIn())
+			{
+
+
+				Navigation.PushModalAsync(new FirstPage());
+
+			}
+			else
+			{
+
+				Navigation.PushModalAsync (new ParseLogin ());
+			}
+
+		}
+
+
 	}
 }
 
