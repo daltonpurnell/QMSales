@@ -14,7 +14,7 @@ namespace QMSales.Droid
 		public static ParseStorage Default { get { return contactServiceInstance; } }
 		public List<QMSalesContact> Contacts { get; private set;}
 
-		protected ParseStorage ()
+		public ParseStorage ()
 		{
 			Contacts = new List<QMSalesContact>();
 
