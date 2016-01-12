@@ -9,7 +9,7 @@ namespace QMSales
 		public App ()
 		{
 
-			MainPage = new NavigationPage(new Loadingpage());
+			MainPage = new Loadingpage();
 
 
 		}
