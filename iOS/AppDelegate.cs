@@ -26,12 +26,12 @@ namespace QMSales.iOS
 
 // 			this parse object will only save if i comment out these properties
 
-			ParseObject thing = new ParseObject("Thing");
+//			ParseObject thing = new ParseObject("Thing");
 //			thing["First Name"] = "Dalton";
 //			thing["Last Name"] = "Purnell";
 //			thing["Email"] = "daltonpurnell@live.com";
 //			thing["Address"] = "420E 700N #3";
-			thing.SaveAsync ();
+//			thing.SaveAsync ();
 
 
 

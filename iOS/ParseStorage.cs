@@ -2,7 +2,10 @@
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Parse;
+using QMSales.iOS;
 
+
+[assembly: Xamarin.Forms.Dependency (typeof (ParseStorage))]
 namespace QMSales.iOS
 {
 	public class ParseStorage : IParseStorage
@@ -116,11 +119,14 @@ namespace QMSales.iOS
 		public async Task<bool> SignUpUserAsync (User user)
 		{
 			try {
+
+
 				var parseUser = new ParseUser () {
 					Username = user.Username,
 					Password = user.Password,
 					Email = user.Email
 				} ;
+
 				await parseUser.SignUpAsync ();
 				// Sign up succeeded
 				return true;

@@ -10,3 +10,6 @@
 /Users/djp1989/Documents/Development/Xamarin/QMSales/QMSales/bin/Debug/QMSales.dll
 /Users/djp1989/Documents/Development/Xamarin/QMSales/QMSales/obj/Debug/QMSales.dll
 /Users/djp1989/Documents/Development/Xamarin/QMSales/QMSales/obj/Debug/QMSales.dll.mdb
+/Users/djp1989/Documents/Development/Xamarin/QMSales/QMSales/obj/Debug/QMSales.ParseLogin.xaml.g.cs
+/Users/djp1989/Documents/Development/Xamarin/QMSales/QMSales/obj/Debug/QMSales.ParseSignup.xaml.g.cs
+/Users/djp1989/Documents/Development/Xamarin/QMSales/QMSales/bin/Debug/Xamarin.Forms.Platform.dll

@@ -1,17 +1,17 @@
 ﻿<Properties StartupItem="iOS/QMSales.iOS.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6s.9.2" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/AppDelegate.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Main.cs">
     <Files>
-      <File FileName="QMSales/IParseStorage.cs" Line="18" Column="42" />
-      <File FileName="iOS/ParseStorage.cs" Line="46" Column="51" />
-      <File FileName="Droid/ParseStorage.cs" Line="42" Column="59" />
-      <File FileName="iOS/AppDelegate.cs" Line="33" Column="23" />
-      <File FileName="QMSales/QMSales.cs" Line="21" Column="56" />
+      <File FileName="iOS/Main.cs" Line="24" Column="1" />
+      <File FileName="QMSales/QMSales.cs" Line="19" Column="48" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/djp1989/Documents/Development/Xamarin/QMSales/QMSales/GreetingsPage.cs" line="14" column="1" />
+      <Breakpoint file="/Users/djp1989/Documents/Development/Xamarin/QMSales/QMSales/obj/Debug/ParseSignup.xaml.g.cs" line="23" column="1" />
+      <Breakpoint file="/Users/djp1989/Documents/Development/Xamarin/QMSales/QMSales/obj/Debug/ParseSignup.xaml.g.cs" line="21" column="1" />
+      <Breakpoint file="/Users/djp1989/Documents/Development/Xamarin/QMSales/QMSales/obj/Debug/ParseSignup.xaml.g.cs" line="19" column="23" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

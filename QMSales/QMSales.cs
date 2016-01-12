@@ -6,9 +6,9 @@ namespace QMSales
 	public class App : Application
 	{
 
-		public static UserManager userManager { get; set; }
 		public App ()
 		{
+
 //			if (userManager.IsUserLoggedIn())
 //			{
 //				MainPage = new FirstPage ();
@@ -18,7 +18,7 @@ namespace QMSales
 			MainPage = new NavigationPage(new ParseLogin());
 //			}
 				
-			NavigationPage.SetHasNavigationBar (MainPage, true);
+//			NavigationPage.SetHasNavigationBar (MainPage, true);
 
 
 		}

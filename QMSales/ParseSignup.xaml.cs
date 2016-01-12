@@ -15,7 +15,7 @@ namespace QMSales
 		}
 
 
-		public async void SignUp_Click(object sender, EventArgs e)   
+		async void OnSignUpActivated(object sender, EventArgs e) 
 
 		{   
 
@@ -27,10 +27,10 @@ namespace QMSales
 
 			} ;
 					
-			var result = await App.userManager.SignUpUserAsync (user);
+			var result = await DependencyService.Get<IParseStorage>().SignUpUserAsync(user);
 
 			if (result) {
-				await Navigation.PopModalAsync();
+				await Navigation.PushAsync (new FirstPage ());
 			} else {
 
 				messageLabel.Text = "Sign up failed";

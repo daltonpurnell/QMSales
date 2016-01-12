@@ -27,7 +27,7 @@ namespace QMSales
 				Password = passwordEntry.Text
 			} ;
 
-			var result = await App.userManager.LoginUserAsync (user);
+			var result = await DependencyService.Get<IParseStorage>().LoginUserAsync(user);
 
 			if (result) {
 				await Navigation.PopModalAsync();
