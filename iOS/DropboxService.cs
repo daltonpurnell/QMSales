@@ -31,11 +31,11 @@ namespace QMSales.iOS
 		}
 
 
-		public async Task DownloadFile() {
+		public Task DownloadFile() {
 			var restClient = new RestClient (Session.SharedSession);
 
 			// download the file
-			await restClient.LoadFile ("https://www.dropbox.com/home/Public", localPath);
+			restClient.LoadFile ("https://www.dropbox.com/home/Public", Environment.SpecialFolder.MyDocuments.ToString());
 
 
 			restClient.FileLoaded += (object sender, RestClientFileLoadedEventArgs e) => {
