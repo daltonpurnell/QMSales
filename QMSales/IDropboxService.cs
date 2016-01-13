@@ -10,6 +10,11 @@ namespace QMSales
 
 		// declare some methods to be implemented in Dropbox service classes in .ios and .android
 
+		Task LinkDropBox();
+
+		Task DownloadFile();
+
+
 
 	}
 }

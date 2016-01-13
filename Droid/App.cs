@@ -12,9 +12,11 @@ namespace QMSales.Droid
 		{
 		}
 
+
 			public override void OnCreate ()
 			{
 				base.OnCreate ();
+
 
 			}
 
