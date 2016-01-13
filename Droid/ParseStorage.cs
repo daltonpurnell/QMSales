@@ -52,7 +52,7 @@ namespace QMSales.Droid
 					c.Email = Convert.ToString (po["Email"]);
 					c.Address = Convert.ToString (po["Address"]);
 					c.User = Convert.ToString (po["User"]);
-//					c.ObjectACL = Convert.ToString (po ["ObjectACL"]);
+//					c.ObjectACL = Convert.ToString (po ["ObjectACL"]);s
 
 		
 					return c;
