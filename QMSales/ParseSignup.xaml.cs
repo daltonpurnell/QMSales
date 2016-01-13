@@ -13,6 +13,7 @@ namespace QMSales
 			InitializeComponent ();
 			this.BackgroundColor = Color.FromRgb (136, 195, 55);
 			SignUpButton.TextColor = Color.White;
+			SignUpButton.BackgroundColor = Color.Gray;
 			usernameLabel.TextColor = Color.White;
 			passwordLabel.TextColor = Color.White;
 			emailLabel.TextColor = Color.White;
