@@ -8,7 +8,7 @@ using System.IO;
 [assembly: Xamarin.Forms.Dependency (typeof (DropboxService))]
 namespace QMSales.Droid
 {
-	public class DropboxService : IDropboxService
+	public class DropboxService : IDropboxService2
 	{
 
 
@@ -19,16 +19,8 @@ namespace QMSales.Droid
 		public DropboxService ()
 		{
 
-
-
 		}
-
-
-		// implement the methods declared in the idropboxservice interface
-		public async Task LinkDropBox() {
-
-			// dropbox was linked in the MainActivity.cs
-		}
+			
 
 		public Task DownloadFile() {
 

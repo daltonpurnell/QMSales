@@ -4,9 +4,11 @@
 	<application android:label="QMSales"></application>
 	<uses-permission android:name="android.permission.READ_CONTACTS" />
 	<uses-permission android:name="android.permission.INTERNET" />
-	<activity android:name="com.dropbox.client2.android.AuthActivity" android:launchMode="singleTask" android:configChanges="orientation|keyboard">
+	<activity 
+	android:name="com.dropbox.client2.android.AuthActivity" 
+	android:launchMode="singleTask" 
+	android:configChanges="orientation|keyboard">
 		<intent-filter>
-			<!-- Change this to be db- followed by your app key -->
 			<data android:scheme="db-h88oe108wiudpge" />
 			<action android:name="android.intent.action.VIEW" />
 			<category android:name="android.intent.category.BROWSABLE" />

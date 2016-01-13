@@ -4,17 +4,16 @@ using System.Collections.Generic;
 
 namespace QMSales
 {
-
+	
+	// ios implementation file uses this interface
 	public interface IDropboxService
 	{
 
-		// declare some methods to be implemented in Dropbox service classes in .ios and .android
+		// declare some methods to be implemented in Dropbox implementation class for ios
 
 		Task LinkDropBox();
 
 		Task DownloadFile();
-
-
 
 	}
 }

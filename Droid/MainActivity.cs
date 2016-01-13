@@ -13,6 +13,7 @@ using Dropbox.CoreApi.Android;
 using Java.Lang;
 
 
+
 namespace QMSales
 {
 	[Activity (Label = "QMSales.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -22,39 +23,36 @@ namespace QMSales
 
 		string AppKey = "h88oe108wiudpge";
 		string AppSecret = "h88oe108wiudpge";
-		DropboxAPI dropboxApi;
+		DropboxApi dropboxApi;
 
 
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-
 			global::Xamarin.Forms.Forms.Init (this, bundle);
-
-
-//			App.userManager = new UserManager (ParseStorage.Default);
-
 			LoadApplication (new App ());
 		}
 
-		protected async override void OnStart () {
+
+		protected override void OnStart () {
 
 			base.OnStart ();
 			AppKeyPair appKeys = new AppKeyPair(AppKey, AppSecret);
 			AndroidAuthSession session = new AndroidAuthSession(appKeys);
-			dropboxApi = new DropboxAPI (session);
-			(DropboxApi.Session as AndroidAuthSession).StartOAuth2Authentication (this);
+			dropboxApi = new DropboxApi (session);
+			(dropboxApi.Session as AndroidAuthSession).StartOAuth2Authentication (this);
+
 
 		}
 
 
-		protected async override void OnResume ()
+		protected override void OnResume ()
 		{
 			base.OnResume ();
 
 			// After you allowed to link the app with Dropbox,
 			// you need to finish the Authentication process
-			var session = DropboxApi.Session as AndroidAuthSession;
+			var session = dropboxApi.Session as AndroidAuthSession;
 			if (!session.AuthenticationSuccessful ())
 				return;
 
