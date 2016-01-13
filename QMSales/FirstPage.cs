@@ -115,37 +115,49 @@ namespace QMSales
 			public void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 			{
 
-				var item = (HandyRefItem)BindingContext;
-
 
 				if (e.SelectedItem == null) {
 					return; //ItemSelected is called on deselection, which results in SelectedItem being set to null
 
 					// open url based on which cell was selected
 				} else {
+					
+					SalesToolItem item = (SalesToolItem)e.SelectedItem;
+					int index = -1;
 
-					DisplayAlert ("Alert", e.SelectedItem.ToString(), "OK");
-
-
-					switch (e.SelectedItem.GetHashCode()) 
-
+					for(int i = 0; i < salesToolsItems.Count; i++)
 					{
+						if(salesToolsItems[i] == item)
+						{
+							index = i;
+							break;
+						}
+					}
+//					DisplayAlert("Tapped", index.ToString(), "OK");
 
-					case 0:
-						// open url
+
+
+					if (index.ToString () == "0") {
+
 						Device.OpenUri(new Uri("http://quickmar.com"));
-						break;
-					case 1:
-						// show alert view
-						DisplayAlert ("Elevator Pitch", "Blah blah blah blah blah blah blah blah blah blah blah blah", "Ok");
-						break;
-					case 2:
-						// open url
+						((ListView)sender).SelectedItem = null; // de-select the row
+
+
+					}
+
+					if (index.ToString () == "1") {
+
 						Device.OpenUri(new Uri("http://quickmar.com"));
-						break;
-					default:
-						// stuff
-						break;
+						((ListView)sender).SelectedItem = null; // de-select the row
+
+					}
+
+					if (index.ToString () == "2") {
+
+						Device.OpenUri(new Uri("http://quickmar.com"));
+						((ListView)sender).SelectedItem = null; // de-select the row
+
+
 					}
 				}
 			}
