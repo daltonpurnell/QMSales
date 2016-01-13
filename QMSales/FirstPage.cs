@@ -135,13 +135,10 @@ namespace QMSales
 					}
 //					DisplayAlert("Tapped", index.ToString(), "OK");
 
-
-
 					if (index.ToString () == "0") {
 
 						Device.OpenUri(new Uri("http://quickmar.com"));
 						((ListView)sender).SelectedItem = null; // de-select the row
-
 
 					}
 
@@ -156,7 +153,6 @@ namespace QMSales
 
 						Device.OpenUri(new Uri("http://quickmar.com"));
 						((ListView)sender).SelectedItem = null; // de-select the row
-
 
 					}
 				}
@@ -272,59 +268,94 @@ namespace QMSales
 					// open url based on which cell was selected
 				} else {
 
-									DisplayAlert ("Alert", "Row has been selected", "OK");
+					HandyRefItem handyRefItem = (HandyRefItem)e.SelectedItem;
+					int index = -1;
 
-					switch (e.SelectedItem.ToString ()) 
-
+					for(int i = 0; i < handyRefItems.Count; i++)
 					{
+						if(handyRefItems[i] == handyRefItem)
+						{
+							index = i;
+							break;
+						}
+					}
+					//					DisplayAlert("Tapped", index.ToString(), "OK");
 
-					case "Request A Demo":
-						// open url
+					if (index.ToString () == "0") {
+
 						Device.OpenUri(new Uri("http://quickmar.com"));
-						break;
-					case "Request A Training":
-						// open url
+						((ListView)sender).SelectedItem = null; // de-select the row
+
+					}
+
+					if (index.ToString () == "1") {
+
 						Device.OpenUri(new Uri("http://quickmar.com"));
-						break;
-					case "Hardware Requirements":
-						// open url
+						((ListView)sender).SelectedItem = null; // de-select the row
+
+					}
+
+					if (index.ToString () == "2") {
+
 						Device.OpenUri(new Uri("http://quickmar.com"));
-						break;
-					case "Order Materials":
-						// open url
+						((ListView)sender).SelectedItem = null; // de-select the row
+
+					}
+
+					if (index.ToString () == "3") {
+
 						Device.OpenUri(new Uri("http://quickmar.com"));
-						break;
-					case "View Training Materials":
-						// open url
+						((ListView)sender).SelectedItem = null; // de-select the row
+
+					}
+
+					if (index.ToString () == "4") {
+
 						Device.OpenUri(new Uri("http://quickmar.com"));
-						break;
-					case "Sample Project Plan":
-						// open url
+						((ListView)sender).SelectedItem = null; // de-select the row
+
+					}
+
+					if (index.ToString () == "5") {
+
 						Device.OpenUri(new Uri("http://quickmar.com"));
-						break;
-					case "QuickMAR University":
-						// open url
+						((ListView)sender).SelectedItem = null; // de-select the row
+
+					}
+
+					if (index.ToString () == "6") {
+
 						Device.OpenUri(new Uri("http://quickmar.com"));
-						break;
-					case "News":
-						// open url
+						((ListView)sender).SelectedItem = null; // de-select the row
+
+					}
+
+					if (index.ToString () == "7") {
+
 						Device.OpenUri(new Uri("http://quickmar.com"));
-						break;
-					case "Brochure":
-						// open url
+						((ListView)sender).SelectedItem = null; // de-select the row
+
+					}
+
+					if (index.ToString () == "8") {
+
 						Device.OpenUri(new Uri("http://quickmar.com"));
-						break;
-					case "Fact Sheet":
-						// open url
+						((ListView)sender).SelectedItem = null; // de-select the row
+
+					}
+
+					if (index.ToString () == "9") {
+
 						Device.OpenUri(new Uri("http://quickmar.com"));
-						break;
-					case "I bought QuickMAR. Now what?":
-						// show new page
-						DisplayAlert ("What's next", "Blah blah blah blah blah blah blah blah blah blah blah blah", "Ok");
-						break;
-					default:
-						// stuff
-						break;
+						((ListView)sender).SelectedItem = null; // de-select the row
+
+					}
+
+					if (index.ToString () == "10") {
+
+						Device.OpenUri(new Uri("http://quickmar.com"));
+						((ListView)sender).SelectedItem = null; // de-select the row
+
 					}
 				}
 			}
