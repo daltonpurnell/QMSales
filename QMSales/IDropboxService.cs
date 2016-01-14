@@ -10,11 +10,11 @@ namespace QMSales
 	{
 
 		// declare some methods to be implemented in Dropbox implementation class for ios
-
-		Task LinkDropBox();
-
-		Task DownloadFile();
-
+//
+//		Task LinkDropBox(FirstPage firstPage);
+//
+//		Task DownloadFile();
+//
 	}
 }
 

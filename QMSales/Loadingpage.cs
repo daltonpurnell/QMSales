@@ -26,11 +26,11 @@ namespace QMSales
 
 			if (DependencyService.Get<IParseStorage>().IsUserLoggedIn())
 			{
-				Navigation.PushModalAsync(new FirstPage());
+				Navigation.PushAsync( new FirstPage());
 			}
 			else
 			{
-				Navigation.PushModalAsync (new ParseLogin ());
+				Navigation.PushAsync (new ParseLogin ());
 			}
 
 		}

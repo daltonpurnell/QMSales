@@ -27,6 +27,10 @@
 /Users/djp1989/Documents/Development/Xamarin/QMSales/iOS/obj/iPhoneSimulator/Debug/optimized/Icon-Small-40@2x.png
 /Users/djp1989/Documents/Development/Xamarin/QMSales/iOS/obj/iPhoneSimulator/Debug/optimized/Icon-Small-40@3x.png
 /Users/djp1989/Documents/Development/Xamarin/QMSales/iOS/obj/iPhoneSimulator/Debug/optimized/
+/Users/djp1989/Documents/Development/Xamarin/QMSales/iOS/bin/iPhoneSimulator/Debug/QMSales.iOS.exe.mdb
+/Users/djp1989/Documents/Development/Xamarin/QMSales/iOS/bin/iPhoneSimulator/Debug/QMSales.iOS.exe
+/Users/djp1989/Documents/Development/Xamarin/QMSales/iOS/obj/iPhoneSimulator/Debug/QMSales.iOS.exe
+/Users/djp1989/Documents/Development/Xamarin/QMSales/iOS/obj/iPhoneSimulator/Debug/QMSales.iOS.exe.mdb
 /Users/djp1989/Documents/Development/Xamarin/QMSales/iOS/bin/iPhoneSimulator/Debug/Xamarin.Mobile.dll
 /Users/djp1989/Documents/Development/Xamarin/QMSales/iOS/bin/iPhoneSimulator/Debug/Parse.iOS.dll
 /Users/djp1989/Documents/Development/Xamarin/QMSales/iOS/bin/iPhoneSimulator/Debug/Dropbox.CoreApi.iOS.dll

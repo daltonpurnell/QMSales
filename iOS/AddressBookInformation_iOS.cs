@@ -71,7 +71,11 @@ namespace QMSales.iOS
 			picker.Delegate = pickerDelegate;
 
 			// show the event controller
-			UIApplication.SharedApplication.Windows[0].RootViewController.PresentViewController (picker, true, null);
+
+			FirstPage firstPage = new FirstPage ();
+
+			UIApplication.SharedApplication.Windows[0].RootViewController.PresentModalViewController (picker, true);
+
 
 		}
 

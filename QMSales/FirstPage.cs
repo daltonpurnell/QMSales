@@ -247,6 +247,8 @@ namespace QMSales
 
 
 
+
+
 			public void HandleLogOutEvent (object sender, EventArgs ea) {
 
 				DependencyService.Get<IParseStorage> ().LogoutAsync ();
@@ -489,9 +491,12 @@ namespace QMSales
 		public FirstPage ()
 		{
 
-			this.Children.Add (new NavigationPage(new HandyRefPage ()) { Title = "Handy Ref", BarBackgroundColor = Color.FromRgb (136, 195, 55), BarTextColor = Color.White });
-			this.Children.Add (new NavigationPage(new SalesToolsPage ()) { Title = "Sales Tools", BarBackgroundColor = Color.FromRgb (136, 195, 55), BarTextColor = Color.White});
-			this.Children.Add (new NavigationPage(new ContactsPage ()) { Title = "Contacts", BarBackgroundColor = Color.FromRgb (136, 195, 55), BarTextColor = Color.White});
+			this.Children.Add (new HandyRefPage ());
+			this.Children.Add (new SalesToolsPage ());
+			this.Children.Add (new ContactsPage ());
+
+
+//			this.Children.Add (new NavigationPage(new ContactsPage ()) { Title = "Contacts", BarBackgroundColor = Color.FromRgb (136, 195, 55), BarTextColor = Color.White});
 
 		}
 			
@@ -500,6 +505,8 @@ namespace QMSales
 		protected override void OnAppearing ()
 		{
 			base.OnAppearing ();
+
+//			DependencyService.Get<IDropboxService> ().LinkDropBox (this);
 
 
 		}
