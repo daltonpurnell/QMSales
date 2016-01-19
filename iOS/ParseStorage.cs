@@ -39,6 +39,7 @@ namespace QMSales.iOS
 
 
 			return po;
+
 		}
 
 		static QMSalesContact FromParseObject (ParseObject po)
@@ -67,6 +68,8 @@ namespace QMSales.iOS
 				cl.Add (FromParseObject (c));
 			}
 
+			Console.Write ("Getting contacts from Parse");
+
 			return cl;
 		}
 			
@@ -83,6 +86,7 @@ namespace QMSales.iOS
 
 			return Contacts;
 		}
+
 
 		public async Task SaveContactAsync(QMSalesContact contact)
 		{

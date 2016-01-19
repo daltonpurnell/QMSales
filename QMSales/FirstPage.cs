@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Xamarin.Forms;
 using System.Threading.Tasks;
+using System.Collections;
 
 
 namespace QMSales
@@ -26,9 +27,7 @@ namespace QMSales
 			}
 			public string Name { private set; get; }
 		};
-
-
-
+			
 
 
 		public class SalesToolsPage : ContentPage 
@@ -261,7 +260,6 @@ namespace QMSales
 			public void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
 			{
 
-				var item = (HandyRefItem)BindingContext;
 
 
 				if (e.SelectedItem == null) {
@@ -373,59 +371,77 @@ namespace QMSales
 		public class ContactsPage : ContentPage {
 
 
+			public class CustomCell : ViewCell
+			{
+				public CustomCell()
+				{
+					//instantiate each of our views
+					StackLayout cellWrapper = new StackLayout ();
+					StackLayout verticalLayout = new StackLayout ();
+					Label first = new Label ();
+					Label second = new Label ();
+					Label third = new Label ();
+					Label fourth = new Label();
+					Label fifth = new Label ();
+
+
+					//set bindings
+					first.SetBinding (Label.TextProperty, "FirstName");
+					second.SetBinding (Label.TextProperty, "FirstName");
+					third.SetBinding (Label.TextProperty, "PhoneNumber");
+					fourth.SetBinding (Label.TextProperty, "Email");
+					fifth.SetBinding (Label.TextProperty, "Address");
+
+
+					//Set properties for desired design
+					cellWrapper.BackgroundColor = Color.White;
+					verticalLayout.Orientation = StackOrientation.Vertical;
+
+					first.VerticalOptions = LayoutOptions.FillAndExpand;
+					second.VerticalOptions = LayoutOptions.FillAndExpand;
+					third.VerticalOptions = LayoutOptions.FillAndExpand;
+					fourth.VerticalOptions = LayoutOptions.FillAndExpand;
+
+					first.TextColor = Color.FromRgb(120, 120, 120);
+					second.TextColor = Color.FromRgb (120, 120, 120);
+					third.TextColor = Color.FromRgb (120, 120, 120);
+					fourth.TextColor = Color.FromRgb (120, 120, 120);
+					fifth.TextColor = Color.FromRgb (120, 120, 120);
+
+
+					//add views to the view hierarchy
+					verticalLayout.Children.Add (first);
+					verticalLayout.Children.Add (second);
+					verticalLayout.Children.Add (third);
+					verticalLayout.Children.Add (fourth);
+					verticalLayout.Children.Add (fifth);
+					cellWrapper.Children.Add (verticalLayout);
+					View = cellWrapper;
+
+
+				}
+
+
+
+			}
+
+
+
+
 			public ContactsPage ()  
 			{
+				var qmsalesContacts = DependencyService.Get<IParseStorage>().GetAll();
+
 
 				Title = "Contacts";
-				ListView ContactsListView = new ListView {
-
-
-
-// 					Need logic to only call this method if there are objects to get so it doesn't return null
-//					ItemsSource = DependencyService.Get<IParseStorage>().GetAll (),
-
-					ItemTemplate = new DataTemplate(() =>
-						{
-							// Create views with bindings for displaying each property.
-							Label label = new Label();
-							label.SetBinding(Label.TextProperty, "First Name");
-
-							Label lastName = new Label();
-							lastName.SetBinding(Label.TextProperty, "Last Name");
-
-							Label phoneNumber = new Label();
-							phoneNumber.SetBinding(Label.TextProperty, "Phone Number");
-
-							Label email = new Label();
-							email.SetBinding(Label.TextProperty, "Email");
-
-							Label address = new Label();
-							address.SetBinding(Label.TextProperty, "Address");
-
-
-
-							// Return an assembled ViewCell.
-							return new ViewCell
-							{
-								
-								View = new StackLayout
-								{
-									Padding = new Thickness(15, 10),
-									Orientation = StackOrientation.Horizontal,
-									Children = 
-									{
-										label,
-										lastName,
-										phoneNumber,
-										email,
-										address
-									}
-									}
-							};
-						})
-
-
+				ListView ContactsListView = new ListView 
+				
+				{
+					ItemsSource = (qmsalesContacts as IEnumerable), 
+					ItemTemplate = new DataTemplate(typeof(CustomCell))				
 				};
+
+
 
 				Content = ContactsListView;
 
@@ -496,6 +512,8 @@ namespace QMSales
 			this.Children.Add (new ContactsPage ());
 
 
+//			this.Children.Add (new NavigationPage(new HandyRefPage ()) { Title = "Contacts", BarBackgroundColor = Color.FromRgb (136, 195, 55), BarTextColor = Color.White});
+//			this.Children.Add (new NavigationPage(new SalesToolsPage ()) { Title = "Contacts", BarBackgroundColor = Color.FromRgb (136, 195, 55), BarTextColor = Color.White});
 //			this.Children.Add (new NavigationPage(new ContactsPage ()) { Title = "Contacts", BarBackgroundColor = Color.FromRgb (136, 195, 55), BarTextColor = Color.White});
 
 		}
@@ -506,8 +524,9 @@ namespace QMSales
 		{
 			base.OnAppearing ();
 
-//			DependencyService.Get<IDropboxService> ().LinkDropBox (this);
+//			await DependencyService.Get<IParseStorage> ().GetAll ();
 
+//			DependencyService.Get<IDropboxService> ().LinkDropBox (this);
 
 		}
 

@@ -21,9 +21,9 @@ namespace QMSales
 	{
 
 
-		string AppKey = "h88oe108wiudpge";
-		string AppSecret = "h88oe108wiudpge";
-		DropboxApi dropboxApi;
+//		string AppKey = "h88oe108wiudpge";
+//		string AppSecret = "h88oe108wiudpge";
+//		DropboxApi dropboxApi;
 
 
 		protected override void OnCreate (Bundle bundle)
@@ -37,10 +37,10 @@ namespace QMSales
 		protected override void OnStart () {
 
 			base.OnStart ();
-			AppKeyPair appKeys = new AppKeyPair(AppKey, AppSecret);
-			AndroidAuthSession session = new AndroidAuthSession(appKeys);
-			dropboxApi = new DropboxApi (session);
-			(dropboxApi.Session as AndroidAuthSession).StartOAuth2Authentication (this);
+//			AppKeyPair appKeys = new AppKeyPair(AppKey, AppSecret);
+//			AndroidAuthSession session = new AndroidAuthSession(appKeys);
+//			dropboxApi = new DropboxApi (session);
+//			(dropboxApi.Session as AndroidAuthSession).StartOAuth2Authentication (this);
 
 
 		}
@@ -50,22 +50,22 @@ namespace QMSales
 		{
 			base.OnResume ();
 
-			// After you allowed to link the app with Dropbox,
-			// you need to finish the Authentication process
-			var session = dropboxApi.Session as AndroidAuthSession;
-			if (!session.AuthenticationSuccessful ())
-				return;
-
-			try {
-				// Call this method to finish the authentication process
-				// Will bind the user's access token to the session.
-				session.FinishAuthentication ();
-
-				// Save the Access Token somewhere
-				var accessToken = session.OAuth2AccessToken;
-			} catch (IllegalStateException ex) {
-				Toast.MakeText (this, ex.LocalizedMessage, ToastLength.Short).Show ();
-			}
+//			// After you allowed to link the app with Dropbox,
+//			// you need to finish the Authentication process
+//			var session = dropboxApi.Session as AndroidAuthSession;
+//			if (!session.AuthenticationSuccessful ())
+//				return;
+//
+//			try {
+//				// Call this method to finish the authentication process
+//				// Will bind the user's access token to the session.
+//				session.FinishAuthentication ();
+//
+//				// Save the Access Token somewhere
+//				var accessToken = session.OAuth2AccessToken;
+//			} catch (IllegalStateException ex) {
+//				Toast.MakeText (this, ex.LocalizedMessage, ToastLength.Short).Show ();
+//			}
 		}
 	}
 }

@@ -9,6 +9,9 @@ using AddressBookUI;
 using UIKit;
 using AddressBook;
 using Parse;
+using Contacts;
+using ContactsUI;
+using Foundation;
 
 
 [assembly: Dependency(typeof(AddressBookInformation_iOS))]
@@ -64,119 +67,142 @@ namespace QMSales.iOS
 		public void DisplayContactScreen()
 		{
 			//... do iOS Magic
-			ABPeoplePickerNavigationController picker = new ABPeoplePickerNavigationController ();
+			CNContactPickerViewController picker = new CNContactPickerViewController ();
 
-			PeoplePickerDelegate pickerDelegate = new PeoplePickerDelegate ();
+			ContactPickerDelegate pickerDelegate = new ContactPickerDelegate ();
 
 			picker.Delegate = pickerDelegate;
 
-			// show the event controller
+//			// Define fields to be searched
+//			var fetchKeys = new NSObject[] {CNContactKey.EmailAddresses};
+//			// Grab matching contacts
+//			var store = new CNContactStore();
+//			NSError error;
+//			var contacts = store.GetUnifiedContacts(null, fetchKeys, out error);
 
-			FirstPage firstPage = new FirstPage ();
-
+			// present contact picker
 			UIApplication.SharedApplication.Windows[0].RootViewController.PresentModalViewController (picker, true);
 
 
 		}
 
 
-	
 
 
-		public class PeoplePickerDelegate : ABPeoplePickerNavigationControllerDelegate
-
-		{
+		public class ContactPickerDelegate : CNContactPickerDelegate {
 
 
-
-			public override void Cancelled (ABPeoplePickerNavigationController peoplePicker)
+			#region Constructors
+			public ContactPickerDelegate ()
 			{
+			}
+
+			public ContactPickerDelegate (IntPtr handle) : base (handle)
+			{
+			}
+			#endregion
+
+
+
+			#region Override Methods
+			public override void ContactPickerDidCancel (CNContactPickerViewController picker)
+			{
+
 				UIApplication.SharedApplication.Windows [0].RootViewController.DismissViewController (true, null);
+				Console.WriteLine ("User canceled picker");
 
 			}
-	
 
-		
-			public override void DidSelectPerson (ABPeoplePickerNavigationController peoplePicker, ABPerson selectedPerson)
+			public override void DidSelectContact (CNContactPickerViewController picker, CNContact contact)
 			{
-				if (ParseUser.CurrentUser != null) {
-					// create a new qmsalesContact object
-					QMSalesContact qmsalesContact = new QMSalesContact ();
+
+				// create a new qmsalesContact object
+				QMSalesContact qmsalesContact = new QMSalesContact ();
 
 
-					if (selectedPerson.FirstName == null) {
+				if (contact.GivenName == null) {
 
-						qmsalesContact.FirstName = "No first name";
+					qmsalesContact.FirstName = "No first name";
 
-
-					} else {
-
-						qmsalesContact.FirstName = selectedPerson.FirstName;
-					}
-
-
-					if (selectedPerson.LastName == null) {
-
-						qmsalesContact.LastName = "No last name";
-					} else {
-
-						qmsalesContact.LastName = selectedPerson.LastName;
-					}
-
-
-					if (selectedPerson.GetAllAddresses ().FirstOrDefault ().ToString () == null) {
-
-						qmsalesContact.Address = "No address";
-					} else {
-
-						qmsalesContact.Address = selectedPerson.GetAllAddresses ().FirstOrDefault ().ToString ();
-					}
-
-
-					if (selectedPerson.GetEmails ().FirstOrDefault ().ToString () == null) {
-
-						qmsalesContact.Email = "No email";
-					} else {
-
-						qmsalesContact.Email = selectedPerson.GetEmails ().FirstOrDefault ().ToString ();
-					}
-
-
-					if (selectedPerson.GetPhones ().FirstOrDefault ().ToString () == null) {
-
-						qmsalesContact.PhoneNumber = "No phone number";
-					} else {
-
-						qmsalesContact.PhoneNumber = selectedPerson.GetPhones ().FirstOrDefault ().ToString ();
-					}
-
-
-					// there is no login or signup yet, so the user can't be set yet.
-					qmsalesContact.User = ParseUser.CurrentUser.ToString ();
-//					qmsalesContact.ObjectACL = new ParseACL(ParseUser.CurrentUser.ToString());
-
-//					ParseACL objectACL = new ParseACL (ParseUser.CurrentUser);
-
-//					// save this contact to parse
-					DependencyService.Get<IParseStorage> ().SaveContactAsync (qmsalesContact);
-					// dismiss people picker
-					UIApplication.SharedApplication.Windows [0].RootViewController.DismissViewControllerAsync (true);
 
 				} else {
 
-					// show login page
-
-
+					qmsalesContact.FirstName = contact.GivenName;
 				}
 
 
+				if (contact.FamilyName == null) {
+
+					qmsalesContact.LastName = "No last name";
+				} else {
+
+					qmsalesContact.LastName = contact.FamilyName;
+				}
+
+
+				if (contact.PostalAddresses.FirstOrDefault().ToString()== null) {
+
+					qmsalesContact.Address = "No address";
+				} else {
+
+					qmsalesContact.Address = contact.PostalAddresses.FirstOrDefault ().ToString ();
+				}
+
+
+				if (contact.EmailAddresses.FirstOrDefault().ToString() == null) {
+
+					qmsalesContact.Email = "No email";
+				} else {
+
+					qmsalesContact.Email = contact.EmailAddresses.FirstOrDefault ().ToString ();
+				}
+
+
+				if (contact.PhoneNumbers.FirstOrDefault().ToString() == null) {
+
+					qmsalesContact.PhoneNumber = "No phone number";
+				} else {
+
+					qmsalesContact.PhoneNumber = contact.PhoneNumbers.FirstOrDefault ().ToString ();
+				}
+
+
+				// there is no login or signup yet, so the user can't be set yet.
+				qmsalesContact.User = ParseUser.CurrentUser.ToString ();
+
+//					qmsalesContact.ObjectACL = new ParseACL(ParseUser.CurrentUser.ToString());
+//					ParseACL objectACL = new ParseACL (ParseUser.CurrentUser);
+
+
+//				//Create Alert
+//				var okAlertController = UIAlertController.Create ("Add this contact to your list", null, UIAlertControllerStyle.Alert);
+//
+//				//Add Action
+//				okAlertController.AddAction (UIAlertAction.Create ("Ok", UIAlertActionStyle.Default, null));
+//				//Add Action
+//				okAlertController.AddAction (UIAlertAction.Create ("No thanks", UIAlertActionStyle.Cancel, null));
+//
+//				// Present Alert
+//				UIApplication.SharedApplication.Windows [0].RootViewController.PresentViewController (okAlertController, true, null);
+
+
+
+//					// save this contact to parse
+				DependencyService.Get<IParseStorage> ().SaveContactAsync (qmsalesContact);
+				// dismiss people picker
+				UIApplication.SharedApplication.Windows [0].RootViewController.DismissViewControllerAsync (true);
+
+				Console.WriteLine ("Selected: {0}", contact);
+			}
+
+			public override void DidSelectContactProperty (CNContactPickerViewController picker, CNContactProperty contactProperty)
+			{
+
+				Console.WriteLine ("Selected Property: {0}", contactProperty);
 
 			}
+			#endregion
 		}
-
-
-
-
-
-    }
+	}
+		
 }

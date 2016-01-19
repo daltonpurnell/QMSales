@@ -1,11 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.globalez">
-	<uses-sdk android:minSdkVersion="15" android:targetSdkVersion="23" />
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="23" />
 	<application android:label="QMSales"></application>
 	<uses-permission android:name="android.permission.READ_CONTACTS" />
 	<uses-permission android:name="android.permission.INTERNET" />
-	<activity 
-	android:name="com.dropbox.client2.android.AuthActivity" 
+	 <activity
+        android:name="com.example.ondropbox.MainActivity"
+        android:label="QMSales" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+	<activity android:name="com.dropbox.client2.android.AuthActivity" 
 	android:launchMode="singleTask" 
 	android:configChanges="orientation|keyboard">
 		<intent-filter>

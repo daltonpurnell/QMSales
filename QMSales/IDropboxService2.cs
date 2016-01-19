@@ -11,7 +11,7 @@ namespace QMSales
 
 		// declare some methods to be implemented in Dropbox implementation class for android
 
-		Task DownloadFile();
+//		Task DownloadFile();
 	}
 }
 
