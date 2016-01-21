@@ -36,7 +36,7 @@ namespace QMSales.iOS
 //			var restClient = new RestClient (Session.SharedSession);
 //
 //			// download the file
-//			restClient.LoadFile ("https://www.dropbox.com/home/Public", Environment.SpecialFolder.MyDocuments.ToString());
+//			restClient.LoadFile ("https://www.dropbox.com/home/QMSales?preview=2016+CareSuite+by+QuickMAR+Brief.pptx", Environment.SpecialFolder.MyDocuments.ToString());
 //
 //
 //			restClient.FileLoaded += (object sender, RestClientFileLoadedEventArgs e) => {

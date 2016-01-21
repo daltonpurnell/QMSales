@@ -27,7 +27,7 @@ namespace QMSales.Droid
 //			using (var output = File.OpenWrite (Environment.GetFolderPath(Environment.SpecialFolder.CommonDocuments))) {
 //				// Gets the file from Dropbox and saves it to the local folder
 //				DropboxApi dropboxApi;
-//				dropboxApi.GetFile ("https://www.dropbox.com/home/Public", null, output, null);
+//				dropboxApi.GetFile ("https://www.dropbox.com/home/QMSales?preview=2016+CareSuite+by+QuickMAR+Brief.pptx", null, output, null);
 //			}
 //
 //		}

@@ -60,8 +60,8 @@ namespace QMSales.Droid
 			//Create a new intent for choosing a contact
 			var contactPickerIntent = new Intent(Intent.ActionPick,
 				Android.Provider.ContactsContract.Contacts.ContentUri);
-			//Start the contact picker expecting a result
-			// with the resultCode '101'
+			
+			//Start the contact picker expecting a result with the resultCode '101'
 			((Activity)Forms.Context).StartActivityForResult(contactPickerIntent, 101);
 
 
@@ -69,81 +69,70 @@ namespace QMSales.Droid
 		}
 
 	
-//
-//
-//		public override void OnActivityResult(int requestCode, Result resultCode, Intent data)
-//		{
-//			//See if we are handling the contact picker request code
-//			//  and that the result code is ok!
-//			if (requestCode == 101 && resultCode == Result.Ok)
-//			{
-//				//Ensure we have data returned
-//				if (data == null || data.Data == null)
-//					return;
-//
-//				var addressBook = new Xamarin.Contacts.AddressBook(this);
-//				//Note: This is important 
-//				addressBook.PreferContactAggregation = true;
-//				//Load the contact via the android contact id
-//				// in the last segment of the Uri returned by the 
-//				// android contact picker
-//				var contact = addressBook.Load(data.Data.LastPathSegment);
-//
-//				if (ParseUser.CurrentUser != null) {
-//					// create a new qmsalesContact object
-//					var qmsalesContact = new QMSalesContact ();
-//
-//					if (contact.FirstName == null) {
-//						qmsalesContact.FirstName = "No first name";
-//					} else {
-//						qmsalesContact.FirstName = contact.FirstName;
-//					}
-//
-//					if (contact.LastName == null) {
-//						qmsalesContact.LastName = "No last name";
-//					} else {
-//						qmsalesContact.LastName = contact.LastName;
-//					}
-//
-//					if (contact.Addresses.FirstOrDefault () == null) {
-//						qmsalesContact.Address = "No address";
-//					} else {
-//						qmsalesContact.Address = contact.Addresses.FirstOrDefault ().ToString ();
-//					}
-//
-//					if (contact.Emails.FirstOrDefault () == null) {
-//						qmsalesContact.Email = "No email";
-//					} else {
-//						qmsalesContact.Email = contact.Emails.FirstOrDefault ().ToString ();
-//					}
-//
-//					if (contact.Phones.FirstOrDefault () == null) {
-//						qmsalesContact.PhoneNumber = "No phone number";
-//					} else {
-//						qmsalesContact.PhoneNumber = contact.Phones.FirstOrDefault ().ToString ();
-//					}
-//
+
+
+		public void OnActivityResult(int requestCode, Result resultCode, Intent data)
+		{
+			//See if we are handling the contact picker request code
+			//  and that the result code is ok!
+			if (requestCode == 101 && resultCode == Result.Ok)
+			{
+				//Ensure we have data returned
+				if (data == null || data.Data == null)
+					return;
+
+				var addressBook = new Xamarin.Contacts.AddressBook (Xamarin.Forms.Forms.Context);
+				//Note: This is important 
+				addressBook.PreferContactAggregation = true;
+
+				//Load the contact via the android contact id in the last segment of the Uri returned by the android contact picker
+				var contact = addressBook.Load(data.Data.LastPathSegment);
+
+					// create a new qmsalesContact object
+					var qmsalesContact = new QMSalesContact ();
+
+					if (contact.FirstName == null) {
+						qmsalesContact.FirstName = "No first name";
+					} else {
+						qmsalesContact.FirstName = contact.FirstName;
+					}
+
+					if (contact.LastName == null) {
+						qmsalesContact.LastName = "No last name";
+					} else {
+						qmsalesContact.LastName = contact.LastName;
+					}
+
+					if (contact.Addresses.FirstOrDefault () == null) {
+						qmsalesContact.Address = "No address";
+					} else {
+						qmsalesContact.Address = contact.Addresses.FirstOrDefault ().ToString ();
+					}
+
+					if (contact.Emails.FirstOrDefault () == null) {
+						qmsalesContact.Email = "No email";
+					} else {
+						qmsalesContact.Email = contact.Emails.FirstOrDefault ().ToString ();
+					}
+
+					if (contact.Phones.FirstOrDefault () == null) {
+						qmsalesContact.PhoneNumber = "No phone number";
+					} else {
+						qmsalesContact.PhoneNumber = contact.Phones.FirstOrDefault ().ToString ();
+					}
+
 //					qmsalesContact.User = ParseUser.CurrentUser.ToString ();
-////					qmsalesContact.ObjectACL = new ParseACL(ParseUser.CurrentUser.ToString());
-//
-////					ParseACL objectACL = new ParseACL (ParseUser.CurrentUser);
-//
-//					// save this contact to parse
-//					DependencyService.Get<IParseStorage> ().SaveContactAsync (qmsalesContact);
-//					// dismiss contact picker
-//
-//
-//				} else {
-//					// show login page
-////					((Activity)Forms.Context).StartActivity(typeof(ParseLogin));
-//
-//				}
+//					qmsalesContact.ObjectACL = new ParseACL(ParseUser.CurrentUser.ToString());
+
+//					ParseACL objectACL = new ParseACL (ParseUser.CurrentUser);
+
+					// save this contact to parse
+					DependencyService.Get<IParseStorage> ().SaveContactAsync (qmsalesContact);
+					// dismiss contact picker
 
 
-
-//
-//			}
-//		}
+				} 
+		}
 
 
 
