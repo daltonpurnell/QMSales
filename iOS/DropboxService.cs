@@ -30,7 +30,7 @@ namespace QMSales.iOS
 //
 //
 //		}
-//
+
 //
 //		public Task DownloadFile() {
 //			var restClient = new RestClient (Session.SharedSession);
@@ -38,19 +38,18 @@ namespace QMSales.iOS
 //			// download the file
 //			restClient.LoadFile ("https://www.dropbox.com/home/QMSales?preview=2016+CareSuite+by+QuickMAR+Brief.pptx", Environment.SpecialFolder.MyDocuments.ToString());
 //
-//
-//			restClient.FileLoaded += (object sender, RestClientFileLoadedEventArgs e) => {
-//				// Do something when the file is loaded
-//			};
-//
-//			restClient.LoadFileFailed += (object sender, RestClientErrorEventArgs e) => {
-//				// Do something if the request failed
-//			};
-//
-//
 //		}
 
 
+
+
+		//			restClient.FileLoaded += (object sender, RestClientFileLoadedEventArgs e) => {
+		//				// Do something when the file is loaded
+		//			};
+		//
+		//			restClient.LoadFileFailed += (object sender, RestClientErrorEventArgs e) => {
+		//				// Do something if the request failed
+		//			};
 
 	}
 }
