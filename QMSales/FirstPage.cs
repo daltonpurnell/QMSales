@@ -371,6 +371,7 @@ namespace QMSales
 		public class ContactsPage : ContentPage {
 
 
+
 			public class CustomCell : ViewCell
 			{
 				public CustomCell()
@@ -444,6 +445,7 @@ namespace QMSales
 
 
 				Content = ContactsListView;
+				ContactsListView.ItemSelected += OnItemSelected;
 
 
 				// create plus toolbar item
@@ -481,6 +483,24 @@ namespace QMSales
 
 
 			}
+
+
+
+
+			public void OnItemSelected (object sender, SelectedItemChangedEventArgs e)
+			{
+
+				if (e.SelectedItem == null) {
+					return; //ItemSelected is called on deselection, which results in SelectedItem being set to null
+
+					// send email to email address of whichever cell was selected
+				} else {
+
+					DisplayAlert ("success!", "you tapped a cell", "ok");
+				}
+
+			}
+
 
 			public void HandleEvent (object sender, EventArgs ea) {
 
