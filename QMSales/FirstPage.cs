@@ -527,14 +527,15 @@ namespace QMSales
 		public FirstPage ()
 		{
 
-			this.Children.Add (new HandyRefPage ());
-			this.Children.Add (new SalesToolsPage ());
-			this.Children.Add (new ContactsPage ());
+//			this.Children.Add (new HandyRefPage ());
+//			this.Children.Add (new SalesToolsPage ());
+//			this.Children.Add (new ContactsPage ());
 
 
-//			this.Children.Add (new NavigationPage(new HandyRefPage ()) { Title = "Contacts", BarBackgroundColor = Color.FromRgb (136, 195, 55), BarTextColor = Color.White});
-//			this.Children.Add (new NavigationPage(new SalesToolsPage ()) { Title = "Contacts", BarBackgroundColor = Color.FromRgb (136, 195, 55), BarTextColor = Color.White});
-//			this.Children.Add (new NavigationPage(new ContactsPage ()) { Title = "Contacts", BarBackgroundColor = Color.FromRgb (136, 195, 55), BarTextColor = Color.White});
+			this.Children.Add (new NavigationPage(new HandyRefPage ()) { Title = "Contacts", BarBackgroundColor = Color.FromRgb (136, 195, 55), BarTextColor = Color.White});
+			this.Children.Add (new NavigationPage(new SalesToolsPage ()) { Title = "Contacts", BarBackgroundColor = Color.FromRgb (136, 195, 55), BarTextColor = Color.White});
+			this.Children.Add (new NavigationPage(new ContactsPage ()) { Title = "Contacts", BarBackgroundColor = Color.FromRgb (136, 195, 55), BarTextColor = Color.White});
+
 
 		}
 			
@@ -544,7 +545,15 @@ namespace QMSales
 		{
 			base.OnAppearing ();
 
-//			await DependencyService.Get<IParseStorage> ().GetAll ();
+			if (DependencyService.Get<IParseStorage>().IsUserLoggedIn())
+			{
+//				DisplayAlert ("Welcome!", null, "Ok");
+			}
+			else
+			{
+				Navigation.PushModalAsync (new ParseLogin ());
+			}
+
 
 //			DependencyService.Get<IDropboxService> ().LinkDropBox (this);
 

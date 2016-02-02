@@ -8,11 +8,12 @@ namespace QMSales
 	{
 		public Loadingpage ()
 		{
-			this.BackgroundColor = Color.FromRgb (136, 195, 55);
+			this.BackgroundColor = Color.White;
 
 			Content = new StackLayout { 
 				Children = {
-					new Label { Text = "Loading...", TextColor = Color.FromRgb (136, 195, 55)}
+
+//					new Label { Text = "Loading...", TextColor = Color.FromRgb (136, 195, 55)}
 
 				}
 			};

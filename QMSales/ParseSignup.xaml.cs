@@ -11,15 +11,13 @@ namespace QMSales
 		public ParseSignup ()
 		{
 			InitializeComponent ();
-			this.BackgroundColor = Color.FromRgb (136, 195, 55);
+			this.BackgroundColor = Color.White;
 			SignUpButton.TextColor = Color.White;
+//			SignUpButton.BackgroundColor = Color.FromRgba(136, 195, 55, 255);
 			SignUpButton.BackgroundColor = Color.Gray;
-			usernameLabel.TextColor = Color.White;
-			passwordLabel.TextColor = Color.White;
-			emailLabel.TextColor = Color.White;
-			passwordEntry.BackgroundColor = Color.FromRgb (136, 195, 55);
-			usernameEntry.BackgroundColor = Color.FromRgb (136, 195, 55);
-			emailEntry.BackgroundColor = Color.FromRgb (136, 195, 55);
+			passwordEntry.BackgroundColor = Color.Transparent;
+			usernameEntry.BackgroundColor = Color.Transparent;
+			emailEntry.BackgroundColor = Color.Transparent;
 
 		}
 

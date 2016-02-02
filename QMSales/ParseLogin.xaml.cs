@@ -12,15 +12,15 @@ namespace QMSales
 		public ParseLogin ()
 		{
 			InitializeComponent ();
-			this.BackgroundColor = Color.FromRgb (136, 195, 55);
+			this.BackgroundColor = Color.White;
 			SignUpButton.TextColor = Color.White;
+//			SignUpButton.BackgroundColor = Color.FromRgba(30, 57, 146, 255);
 			SignUpButton.BackgroundColor = Color.Gray;
 			LoginButton.TextColor = Color.White;
+//			LoginButton.BackgroundColor = Color.FromRgba(136, 195, 55, 255);
 			LoginButton.BackgroundColor = Color.Gray;
-			usernameLabel.TextColor = Color.White;
-			passwordLabel.TextColor = Color.White;
-			passwordEntry.BackgroundColor = Color.FromRgb (136, 195, 55);
-			usernameEntry.BackgroundColor = Color.FromRgb (136, 195, 55);
+			passwordEntry.BackgroundColor = Color.Transparent;
+			usernameEntry.BackgroundColor = Color.Transparent;
 
 		}
 
@@ -38,10 +38,12 @@ namespace QMSales
 			var result = await DependencyService.Get<IParseStorage>().LoginUserAsync(user);
 
 			if (result) {
-				await Navigation.PushModalAsync(new FirstPage());
+//				await Navigation.PushModalAsync(new FirstPage());
+				await Navigation.PopModalAsync ();
 			} else {
 				
 				messageLabel.Text = "Login failed";
+				await DisplayAlert ("There was an error signing you in", "Please try again", "Ok");
 			}
 
 		}   

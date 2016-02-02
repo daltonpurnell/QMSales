@@ -41,3 +41,4 @@
 /Users/djp1989/Documents/Development/Xamarin/QMSales/iOS/bin/iPhoneSimulator/Debug/QMSales.dll
 /Users/djp1989/Documents/Development/Xamarin/QMSales/iOS/bin/iPhoneSimulator/Debug/QMSales.dll.mdb
 /Users/djp1989/Documents/Development/Xamarin/QMSales/iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.dll
+/Users/djp1989/Documents/Development/Xamarin/QMSales/iOS/obj/iPhoneSimulator/Debug/optimized/caresuite-hand.png
