@@ -14,13 +14,21 @@ namespace QMSales
 			InitializeComponent ();
 			this.BackgroundColor = Color.White;
 			SignUpButton.TextColor = Color.White;
-//			SignUpButton.BackgroundColor = Color.FromRgba(30, 57, 146, 255);
 			SignUpButton.BackgroundColor = Color.Gray;
 			LoginButton.TextColor = Color.White;
-//			LoginButton.BackgroundColor = Color.FromRgba(136, 195, 55, 255);
 			LoginButton.BackgroundColor = Color.Gray;
-			passwordEntry.BackgroundColor = Color.Transparent;
-			usernameEntry.BackgroundColor = Color.Transparent;
+
+			if (Device.OS == TargetPlatform.iOS) { 
+				passwordEntry.BackgroundColor = Color.Transparent;
+				usernameEntry.BackgroundColor = Color.Transparent;
+			} else if (Device.OS == TargetPlatform.Android) { 
+
+				passwordEntry.BackgroundColor = Color.Gray;
+				usernameEntry.BackgroundColor = Color.Gray;
+				LoginButton.IsEnabled = true;
+				SignUpButton.IsEnabled = true;
+
+			}
 
 		}
 

@@ -496,7 +496,8 @@ namespace QMSales
 					// send email to email address of whichever cell was selected
 				} else {
 
-					DisplayAlert ("success!", "you tapped a cell", "ok");
+					Navigation.PushModalAsync (new SelectMaterialsPage ());
+
 				}
 
 			}
@@ -527,14 +528,32 @@ namespace QMSales
 		public FirstPage ()
 		{
 
-//			this.Children.Add (new HandyRefPage ());
-//			this.Children.Add (new SalesToolsPage ());
-//			this.Children.Add (new ContactsPage ());
+			if (Device.OS == TargetPlatform.iOS) { 
+				this.Children.Add (new NavigationPage (new HandyRefPage ()) {
+					Title = "Contacts",
+					BarBackgroundColor = Color.FromRgb (136, 195, 55),
+					BarTextColor = Color.White
 
+				});
+				this.Children.Add (new NavigationPage (new SalesToolsPage ()) {
+					Title = "Contacts",
+					BarBackgroundColor = Color.FromRgb (136, 195, 55),
+					BarTextColor = Color.White
+				});
+				this.Children.Add (new NavigationPage (new ContactsPage ()) {
+					Title = "Contacts",
+					BarBackgroundColor = Color.FromRgb (136, 195, 55),
+					BarTextColor = Color.White
+				});
 
-			this.Children.Add (new NavigationPage(new HandyRefPage ()) { Title = "Contacts", BarBackgroundColor = Color.FromRgb (136, 195, 55), BarTextColor = Color.White});
-			this.Children.Add (new NavigationPage(new SalesToolsPage ()) { Title = "Contacts", BarBackgroundColor = Color.FromRgb (136, 195, 55), BarTextColor = Color.White});
-			this.Children.Add (new NavigationPage(new ContactsPage ()) { Title = "Contacts", BarBackgroundColor = Color.FromRgb (136, 195, 55), BarTextColor = Color.White});
+			} else if (Device.OS == TargetPlatform.Android) {
+ 
+			this.Children.Add (new HandyRefPage ());
+			this.Children.Add (new SalesToolsPage ());
+			this.Children.Add (new ContactsPage ());
+
+			
+			}
 
 
 		}
@@ -545,16 +564,22 @@ namespace QMSales
 		{
 			base.OnAppearing ();
 
-			if (DependencyService.Get<IParseStorage>().IsUserLoggedIn())
-			{
-//				DisplayAlert ("Welcome!", null, "Ok");
-			}
-			else
-			{
-				Navigation.PushModalAsync (new ParseLogin ());
-			}
+
+			this.BackgroundColor = Color.White;
 
 
+
+
+//			if (DependencyService.Get<IParseStorage>().IsUserLoggedIn())
+//			{
+////				DisplayAlert ("Welcome!", null, "Ok");
+//			}
+//			else
+//			{
+//				Navigation.PushModalAsync (new ParseLogin ());
+//			}
+
+//
 //			DependencyService.Get<IDropboxService> ().LinkDropBox (this);
 
 		}

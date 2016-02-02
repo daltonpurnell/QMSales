@@ -18,7 +18,7 @@
 
 	<ContentPage.Content>
 		<StackLayout VerticalOptions="StartAndExpand">
-			<Image Source="caresuite-hand.png" />
+			<Image Source="caresuiteHand.png" />
 			<Entry x:Name="usernameEntry" Placeholder="Username" />
 			<Entry x:Name="passwordEntry" IsPassword="true" Placeholder="Password"  />
 			<Entry x:Name="emailEntry" Placeholder="Email" />
