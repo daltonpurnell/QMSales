@@ -372,59 +372,63 @@ namespace QMSales
 
 
 
-			public class CustomCell : ViewCell
-			{
-				public CustomCell()
-				{
-					//instantiate each of our views
-					StackLayout cellWrapper = new StackLayout ();
-					StackLayout verticalLayout = new StackLayout ();
-					Label first = new Label ();
-					Label second = new Label ();
-					Label third = new Label ();
-					Label fourth = new Label();
-					Label fifth = new Label ();
-
-
-					//set bindings
-					first.SetBinding (Label.TextProperty, "FirstName");
-					second.SetBinding (Label.TextProperty, "FirstName");
-					third.SetBinding (Label.TextProperty, "PhoneNumber");
-					fourth.SetBinding (Label.TextProperty, "Email");
-					fifth.SetBinding (Label.TextProperty, "Address");
-
-
-					//Set properties for desired design
-					cellWrapper.BackgroundColor = Color.White;
-					verticalLayout.Orientation = StackOrientation.Vertical;
-
-					first.VerticalOptions = LayoutOptions.FillAndExpand;
-					second.VerticalOptions = LayoutOptions.FillAndExpand;
-					third.VerticalOptions = LayoutOptions.FillAndExpand;
-					fourth.VerticalOptions = LayoutOptions.FillAndExpand;
-
-					first.TextColor = Color.FromRgb(120, 120, 120);
-					second.TextColor = Color.FromRgb (120, 120, 120);
-					third.TextColor = Color.FromRgb (120, 120, 120);
-					fourth.TextColor = Color.FromRgb (120, 120, 120);
-					fifth.TextColor = Color.FromRgb (120, 120, 120);
-
-
-					//add views to the view hierarchy
-					verticalLayout.Children.Add (first);
-					verticalLayout.Children.Add (second);
-					verticalLayout.Children.Add (third);
-					verticalLayout.Children.Add (fourth);
-					verticalLayout.Children.Add (fifth);
-					cellWrapper.Children.Add (verticalLayout);
-					View = cellWrapper;
-
-
-				}
-
-
-
-			}
+//			public class CustomCell : ViewCell
+//			{
+//				public CustomCell()
+//				{
+//					//instantiate each of our views
+//					StackLayout cellWrapper = new StackLayout ();
+//					StackLayout verticalLayout = new StackLayout ();
+//					Label first = new Label ();
+//					Label second = new Label ();
+//					Label third = new Label ();
+//					Label fourth = new Label();
+//					Label fifth = new Label ();
+//
+//
+//					var contact = new QMSalesContact();
+//					var contactsPage = new ContactsPage();
+//					contactsPage.BindingContext = contact;
+//
+//					//set bindings
+//					first.SetBinding (Label.TextProperty, "FirstName");
+//					second.SetBinding (Label.TextProperty, "FirstName");
+//					third.SetBinding (Label.TextProperty, "PhoneNumber");
+//					fourth.SetBinding (Label.TextProperty, "Email");
+//					fifth.SetBinding (Label.TextProperty, "Address");
+//
+//
+//					//Set properties for desired design
+//					cellWrapper.BackgroundColor = Color.White;
+//					verticalLayout.Orientation = StackOrientation.Vertical;
+//
+//					first.VerticalOptions = LayoutOptions.FillAndExpand;
+//					second.VerticalOptions = LayoutOptions.FillAndExpand;
+//					third.VerticalOptions = LayoutOptions.FillAndExpand;
+//					fourth.VerticalOptions = LayoutOptions.FillAndExpand;
+//
+//					first.TextColor = Color.FromRgb(120, 120, 120);
+//					second.TextColor = Color.FromRgb (120, 120, 120);
+//					third.TextColor = Color.FromRgb (120, 120, 120);
+//					fourth.TextColor = Color.FromRgb (120, 120, 120);
+//					fifth.TextColor = Color.FromRgb (120, 120, 120);
+//
+//
+//					//add views to the view hierarchy
+//					verticalLayout.Children.Add (first);
+//					verticalLayout.Children.Add (second);
+//					verticalLayout.Children.Add (third);
+//					verticalLayout.Children.Add (fourth);
+//					verticalLayout.Children.Add (fifth);
+//					cellWrapper.Children.Add (verticalLayout);
+//					View = cellWrapper;
+//
+//
+//				}
+//
+//
+//
+//			}
 
 
 
@@ -563,12 +567,7 @@ namespace QMSales
 		protected override void OnAppearing ()
 		{
 			base.OnAppearing ();
-
-
 			this.BackgroundColor = Color.White;
-
-
-
 
 //			if (DependencyService.Get<IParseStorage>().IsUserLoggedIn())
 //			{
@@ -579,8 +578,9 @@ namespace QMSales
 //				Navigation.PushModalAsync (new ParseLogin ());
 //			}
 
-//
-//			DependencyService.Get<IDropboxService> ().LinkDropBox (this);
+
+
+			DependencyService.Get<IDropboxService> ().LinkDropBox (this);
 
 		}
 

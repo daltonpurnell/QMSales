@@ -1,10 +1,10 @@
 ﻿<Properties StartupItem="iOS/QMSales.iOS.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6s.9.2" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="QMSales/FirstPage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="QMSales/QMSalesContact.cs">
     <Files>
-      <File FileName="QMSales/FirstPage.cs" Line="480" Column="38" />
-      <File FileName="iOS/ParseStorage.cs" Line="73" Column="14" />
-      <File FileName="Droid/AddressBookInformation.cs" Line="91" Column="43" />
+      <File FileName="QMSales/FirstPage.cs" Line="1" Column="1" />
+      <File FileName="QMSales/CustomCell.cs" Line="1" Column="1" />
+      <File FileName="QMSales/QMSalesContact.cs" Line="23" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

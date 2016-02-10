@@ -40,6 +40,7 @@ namespace QMSales.iOS
 
 			LoadApplication (new App ());
 
+
 			return base.FinishedLaunching (app, options);
 		}
 

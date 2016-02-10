@@ -1,6 +1,6 @@
-# Version: 9.4.0.0 (xcode7.2: 7322991)
+# Version: 9.4.1.25 (cycle6-xi: 962a050)
 # [first argument, ignore] # /Users/djp1989/Documents/Development/Xamarin/QMSales/iOS/mtouch.exe
-/Library/Frameworks/Xamarin.iOS.framework/Versions/9.4.0.0/bin/mtouch \
+/Library/Frameworks/Xamarin.iOS.framework/Versions/9.4.1.25/bin/mtouch \
 	--cache \
 	/Users/djp1989/Documents/Development/Xamarin/QMSales/iOS/obj/iPhoneSimulator/Debug/mtouch-cache \
 	--sim \
